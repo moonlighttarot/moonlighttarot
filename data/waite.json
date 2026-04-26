@@ -1,0 +1,790 @@
+{
+  "deck_name": "유니버설 웨이트",
+  "deck_name_en": "Universal Waite",
+  "description": "유니버설 웨이트 · 타로의 표준",
+  "subtitle": "78장의 가장 보편적인 타로 덱",
+  "interpretation_style": "upright_reversed",
+  "card_count": 78,
+  "cards": [
+    {
+      "id": 0,
+      "name_en": "The Fool",
+      "name_kr": "바보",
+      "symbol": "0",
+      "group": "major",
+      "upright": "순수·시작·모험·자유·무한한 가능성",
+      "reversed": "무모함·경솔·위험한 도약·판단 착오",
+      "image": "cards/waite/00.jpg"
+    },
+    {
+      "id": 1,
+      "name_en": "The Magician",
+      "name_kr": "마법사",
+      "symbol": "I",
+      "group": "major",
+      "upright": "창조력·의지·실행·재능 발휘·자신감",
+      "reversed": "속임수·재능 낭비·미숙함·조작",
+      "image": "cards/waite/01.jpg"
+    },
+    {
+      "id": 2,
+      "name_en": "The High Priestess",
+      "name_kr": "여사제",
+      "symbol": "II",
+      "group": "major",
+      "upright": "직관·내면의 지혜·비밀·신비·잠재의식",
+      "reversed": "비밀 노출·직관 무시·감정 억압",
+      "image": "cards/waite/02.jpg"
+    },
+    {
+      "id": 3,
+      "name_en": "The Empress",
+      "name_kr": "여황제",
+      "symbol": "III",
+      "group": "major",
+      "upright": "풍요·모성·창조·자연·감수성·아름다움",
+      "reversed": "의존·과보호·창조성 막힘·공허",
+      "image": "cards/waite/03.jpg"
+    },
+    {
+      "id": 4,
+      "name_en": "The Emperor",
+      "name_kr": "황제",
+      "symbol": "IV",
+      "group": "major",
+      "upright": "권위·안정·구조·리더십·규율",
+      "reversed": "독재·경직·권위 상실·통제 불능",
+      "image": "cards/waite/04.jpg"
+    },
+    {
+      "id": 5,
+      "name_en": "The Hierophant",
+      "name_kr": "교황",
+      "symbol": "V",
+      "group": "major",
+      "upright": "전통·가르침·신념·종교·제도·결혼",
+      "reversed": "반항·관습 거부·독단·위선",
+      "image": "cards/waite/05.jpg"
+    },
+    {
+      "id": 6,
+      "name_en": "The Lovers",
+      "name_kr": "연인",
+      "symbol": "VI",
+      "group": "major",
+      "upright": "사랑·선택·조화·결합·가치관 일치",
+      "reversed": "불화·유혹·잘못된 선택·이별",
+      "image": "cards/waite/06.jpg"
+    },
+    {
+      "id": 7,
+      "name_en": "The Chariot",
+      "name_kr": "전차",
+      "symbol": "VII",
+      "group": "major",
+      "upright": "의지·승리·추진력·통제·성공",
+      "reversed": "방향 상실·통제 실패·무모함",
+      "image": "cards/waite/07.jpg"
+    },
+    {
+      "id": 8,
+      "name_en": "Strength",
+      "name_kr": "힘",
+      "symbol": "VIII",
+      "group": "major",
+      "upright": "내면의 힘·용기·인내·부드러운 통제",
+      "reversed": "자신감 결여·나약함·분노·충동",
+      "image": "cards/waite/08.jpg"
+    },
+    {
+      "id": 9,
+      "name_en": "The Hermit",
+      "name_kr": "은둔자",
+      "symbol": "IX",
+      "group": "major",
+      "upright": "성찰·지혜·고독·내면 탐구·안내",
+      "reversed": "고립·외로움·현실 도피·편협",
+      "image": "cards/waite/09.jpg"
+    },
+    {
+      "id": 10,
+      "name_en": "Wheel of Fortune",
+      "name_kr": "운명의 수레바퀴",
+      "symbol": "X",
+      "group": "major",
+      "upright": "변화·행운·순환·운명의 전환점",
+      "reversed": "불운·저항·반복되는 실수·정체",
+      "image": "cards/waite/10.jpg"
+    },
+    {
+      "id": 11,
+      "name_en": "Justice",
+      "name_kr": "정의",
+      "symbol": "XI",
+      "group": "major",
+      "upright": "공정·진실·균형·원인과 결과·판결",
+      "reversed": "불공정·편견·책임 회피·부정",
+      "image": "cards/waite/11.jpg"
+    },
+    {
+      "id": 12,
+      "name_en": "The Hanged Man",
+      "name_kr": "매달린 사람",
+      "symbol": "XII",
+      "group": "major",
+      "upright": "희생·관점 전환·인내·기다림·통찰",
+      "reversed": "무의미한 희생·정체·지연·고집",
+      "image": "cards/waite/12.jpg"
+    },
+    {
+      "id": 13,
+      "name_en": "Death",
+      "name_kr": "죽음",
+      "symbol": "XIII",
+      "group": "major",
+      "upright": "끝과 시작·변화·재생·완전한 전환",
+      "reversed": "변화 거부·정체·집착·두려움",
+      "image": "cards/waite/13.jpg"
+    },
+    {
+      "id": 14,
+      "name_en": "Temperance",
+      "name_kr": "절제",
+      "symbol": "XIV",
+      "group": "major",
+      "upright": "균형·조화·인내·중용·치유",
+      "reversed": "불균형·극단·조급함·과도함",
+      "image": "cards/waite/14.jpg"
+    },
+    {
+      "id": 15,
+      "name_en": "The Devil",
+      "name_kr": "악마",
+      "symbol": "XV",
+      "group": "major",
+      "upright": "집착·속박·유혹·물질주의·그림자",
+      "reversed": "해방·속박에서 벗어남·자각·회복",
+      "image": "cards/waite/15.jpg"
+    },
+    {
+      "id": 16,
+      "name_en": "The Tower",
+      "name_kr": "탑",
+      "symbol": "XVI",
+      "group": "major",
+      "upright": "파괴·급격한 변화·각성·충격·해방",
+      "reversed": "변화 지연·재앙 회피·두려움·저항",
+      "image": "cards/waite/16.jpg"
+    },
+    {
+      "id": 17,
+      "name_en": "The Star",
+      "name_kr": "별",
+      "symbol": "XVII",
+      "group": "major",
+      "upright": "희망·영감·평온·치유·새로운 가능성",
+      "reversed": "절망·낙담·신뢰 상실·방향 잃음",
+      "image": "cards/waite/17.jpg"
+    },
+    {
+      "id": 18,
+      "name_en": "The Moon",
+      "name_kr": "달",
+      "symbol": "XVIII",
+      "group": "major",
+      "upright": "환상·혼란·직관·무의식·불안",
+      "reversed": "환상에서 깨어남·명확성·진실 발견",
+      "image": "cards/waite/18.jpg"
+    },
+    {
+      "id": 19,
+      "name_en": "The Sun",
+      "name_kr": "태양",
+      "symbol": "XIX",
+      "group": "major",
+      "upright": "기쁨·성공·활력·진실·빛나는 삶",
+      "reversed": "일시적 좌절·자만·과신·낙관 상실",
+      "image": "cards/waite/19.jpg"
+    },
+    {
+      "id": 20,
+      "name_en": "Judgement",
+      "name_kr": "심판",
+      "symbol": "XX",
+      "group": "major",
+      "upright": "각성·부활·소명·재평가·용서",
+      "reversed": "자기 의심·후회·판단 회피",
+      "image": "cards/waite/20.jpg"
+    },
+    {
+      "id": 21,
+      "name_en": "The World",
+      "name_kr": "세계",
+      "symbol": "XXI",
+      "group": "major",
+      "upright": "완성·성취·통합·여행·새로운 시작",
+      "reversed": "미완성·지연·정체·끝맺지 못함",
+      "image": "cards/waite/21.jpg"
+    },
+    {
+      "id": 22,
+      "name_en": "Ace of Wands",
+      "name_kr": "완드 에이스",
+      "symbol": "W♦",
+      "group": "wands",
+      "upright": "영감·새로운 시작·열정·창조의 씨앗",
+      "reversed": "지연·의욕 상실·방향 없는 에너지",
+      "image": "cards/waite/22.jpg"
+    },
+    {
+      "id": 23,
+      "name_en": "Two of Wands",
+      "name_kr": "완드 2",
+      "symbol": "W♦♦",
+      "group": "wands",
+      "upright": "계획·선택·미래 구상·확장의 기로",
+      "reversed": "우유부단·두려움·계획 무산",
+      "image": "cards/waite/23.jpg"
+    },
+    {
+      "id": 24,
+      "name_en": "Three of Wands",
+      "name_kr": "완드 3",
+      "symbol": "W³",
+      "group": "wands",
+      "upright": "확장·전망·개척·기회의 도래",
+      "reversed": "지연·예상치 못한 장애·좌절",
+      "image": "cards/waite/24.jpg"
+    },
+    {
+      "id": 25,
+      "name_en": "Four of Wands",
+      "name_kr": "완드 4",
+      "symbol": "W⁴",
+      "group": "wands",
+      "upright": "축하·성취·안정·공동체·화합",
+      "reversed": "가정 불화·불안정·소속감 상실",
+      "image": "cards/waite/25.jpg"
+    },
+    {
+      "id": 26,
+      "name_en": "Five of Wands",
+      "name_kr": "완드 5",
+      "symbol": "W⁵",
+      "group": "wands",
+      "upright": "경쟁·갈등·다툼·도전·의견 충돌",
+      "reversed": "갈등 해소·합의·긴장 완화",
+      "image": "cards/waite/26.jpg"
+    },
+    {
+      "id": 27,
+      "name_en": "Six of Wands",
+      "name_kr": "완드 6",
+      "symbol": "W⁶",
+      "group": "wands",
+      "upright": "승리·인정·성공·영광·주목",
+      "reversed": "배신·명예 실추·오만·실패",
+      "image": "cards/waite/27.jpg"
+    },
+    {
+      "id": 28,
+      "name_en": "Seven of Wands",
+      "name_kr": "완드 7",
+      "symbol": "W⁷",
+      "group": "wands",
+      "upright": "방어·용기·입장 고수·도전 극복",
+      "reversed": "포기·압도당함·자신감 상실",
+      "image": "cards/waite/28.jpg"
+    },
+    {
+      "id": 29,
+      "name_en": "Eight of Wands",
+      "name_kr": "완드 8",
+      "symbol": "W⁸",
+      "group": "wands",
+      "upright": "신속·움직임·소식·빠른 진행",
+      "reversed": "지연·정체·혼란·잘못된 방향",
+      "image": "cards/waite/29.jpg"
+    },
+    {
+      "id": 30,
+      "name_en": "Nine of Wands",
+      "name_kr": "완드 9",
+      "symbol": "W⁹",
+      "group": "wands",
+      "upright": "끈기·회복력·마지막 저항·경계",
+      "reversed": "고집·소진·피로·불신",
+      "image": "cards/waite/30.jpg"
+    },
+    {
+      "id": 31,
+      "name_en": "Ten of Wands",
+      "name_kr": "완드 10",
+      "symbol": "W¹⁰",
+      "group": "wands",
+      "upright": "부담·책임 과중·의무·무거운 짐",
+      "reversed": "짐 내려놓음·위임·해방",
+      "image": "cards/waite/31.jpg"
+    },
+    {
+      "id": 32,
+      "name_en": "Page of Wands",
+      "name_kr": "완드 시종",
+      "symbol": "W♜",
+      "group": "wands",
+      "upright": "열정·모험·새 아이디어·어린 에너지",
+      "reversed": "미성숙·산만함·좌절·과장",
+      "image": "cards/waite/32.jpg"
+    },
+    {
+      "id": 33,
+      "name_en": "Knight of Wands",
+      "name_kr": "완드 기사",
+      "symbol": "W♞",
+      "group": "wands",
+      "upright": "행동·모험·열정·충동적 전진",
+      "reversed": "성급함·무모함·좌절·변덕",
+      "image": "cards/waite/33.jpg"
+    },
+    {
+      "id": 34,
+      "name_en": "Queen of Wands",
+      "name_kr": "완드 여왕",
+      "symbol": "W♛",
+      "group": "wands",
+      "upright": "자신감·카리스마·독립·따뜻한 리더",
+      "reversed": "질투·요구 과다·독단·소진",
+      "image": "cards/waite/34.jpg"
+    },
+    {
+      "id": 35,
+      "name_en": "King of Wands",
+      "name_kr": "완드 왕",
+      "symbol": "W♚",
+      "group": "wands",
+      "upright": "비전·리더십·카리스마·추진력",
+      "reversed": "독단·성급함·통제·비현실적",
+      "image": "cards/waite/35.jpg"
+    },
+    {
+      "id": 36,
+      "name_en": "Ace of Cups",
+      "name_kr": "컵 에이스",
+      "symbol": "C♥",
+      "group": "cups",
+      "upright": "새로운 감정·사랑·영적 시작·충만함",
+      "reversed": "감정 억압·상실·사랑의 끝·공허",
+      "image": "cards/waite/36.jpg"
+    },
+    {
+      "id": 37,
+      "name_en": "Two of Cups",
+      "name_kr": "컵 2",
+      "symbol": "C♥♥",
+      "group": "cups",
+      "upright": "상호 사랑·조화·파트너십·결합",
+      "reversed": "불화·이별·균형 상실·오해",
+      "image": "cards/waite/37.jpg"
+    },
+    {
+      "id": 38,
+      "name_en": "Three of Cups",
+      "name_kr": "컵 3",
+      "symbol": "C³",
+      "group": "cups",
+      "upright": "축하·우정·공동체·기쁨의 나눔",
+      "reversed": "고립·소문·과음·관계 단절",
+      "image": "cards/waite/38.jpg"
+    },
+    {
+      "id": 39,
+      "name_en": "Four of Cups",
+      "name_kr": "컵 4",
+      "symbol": "C⁴",
+      "group": "cups",
+      "upright": "권태·무관심·명상·내면의 성찰",
+      "reversed": "새로운 기회·재각성·동기 회복",
+      "image": "cards/waite/39.jpg"
+    },
+    {
+      "id": 40,
+      "name_en": "Five of Cups",
+      "name_kr": "컵 5",
+      "symbol": "C⁵",
+      "group": "cups",
+      "upright": "상실·후회·실망·슬픔·낙담",
+      "reversed": "회복·용서·남은 것에 집중·수용",
+      "image": "cards/waite/40.jpg"
+    },
+    {
+      "id": 41,
+      "name_en": "Six of Cups",
+      "name_kr": "컵 6",
+      "symbol": "C⁶",
+      "group": "cups",
+      "upright": "추억·향수·순수·과거와의 재회",
+      "reversed": "과거에 갇힘·유치함·미래 회피",
+      "image": "cards/waite/41.jpg"
+    },
+    {
+      "id": 42,
+      "name_en": "Seven of Cups",
+      "name_kr": "컵 7",
+      "symbol": "C⁷",
+      "group": "cups",
+      "upright": "선택·환상·꿈·가능성의 혼란",
+      "reversed": "명확한 선택·환상에서 깨어남·집중",
+      "image": "cards/waite/42.jpg"
+    },
+    {
+      "id": 43,
+      "name_en": "Eight of Cups",
+      "name_kr": "컵 8",
+      "symbol": "C⁸",
+      "group": "cups",
+      "upright": "떠남·포기·새로운 탐색·영적 추구",
+      "reversed": "두려움에 머무름·집착·방향 상실",
+      "image": "cards/waite/43.jpg"
+    },
+    {
+      "id": 44,
+      "name_en": "Nine of Cups",
+      "name_kr": "컵 9",
+      "symbol": "C⁹",
+      "group": "cups",
+      "upright": "만족·소원 성취·행복·감사",
+      "reversed": "불만족·과욕·내면 공허·실망",
+      "image": "cards/waite/44.jpg"
+    },
+    {
+      "id": 45,
+      "name_en": "Ten of Cups",
+      "name_kr": "컵 10",
+      "symbol": "C¹⁰",
+      "group": "cups",
+      "upright": "가족의 행복·완전한 사랑·조화",
+      "reversed": "가정 불화·이상과 현실의 괴리",
+      "image": "cards/waite/45.jpg"
+    },
+    {
+      "id": 46,
+      "name_en": "Page of Cups",
+      "name_kr": "컵 시종",
+      "symbol": "C♜",
+      "group": "cups",
+      "upright": "감수성·상상력·새로운 감정·직관",
+      "reversed": "미성숙·현실 도피·감정 기복",
+      "image": "cards/waite/46.jpg"
+    },
+    {
+      "id": 47,
+      "name_en": "Knight of Cups",
+      "name_kr": "컵 기사",
+      "symbol": "C♞",
+      "group": "cups",
+      "upright": "낭만·제안·이상주의·감성적 행동",
+      "reversed": "변덕·비현실·실망·우유부단",
+      "image": "cards/waite/47.jpg"
+    },
+    {
+      "id": 48,
+      "name_en": "Queen of Cups",
+      "name_kr": "컵 여왕",
+      "symbol": "C♛",
+      "group": "cups",
+      "upright": "공감·직관·보살핌·감정의 성숙",
+      "reversed": "감정 억압·의존·무기력·경계 상실",
+      "image": "cards/waite/48.jpg"
+    },
+    {
+      "id": 49,
+      "name_en": "King of Cups",
+      "name_kr": "컵 왕",
+      "symbol": "C♚",
+      "group": "cups",
+      "upright": "감정적 균형·관용·외교·지혜",
+      "reversed": "감정 조작·냉담·억압·기복",
+      "image": "cards/waite/49.jpg"
+    },
+    {
+      "id": 50,
+      "name_en": "Ace of Swords",
+      "name_kr": "소드 에이스",
+      "symbol": "S♠",
+      "group": "swords",
+      "upright": "명확성·진실·돌파·지적 각성",
+      "reversed": "혼란·오판·생각의 막힘·폭력",
+      "image": "cards/waite/50.jpg"
+    },
+    {
+      "id": 51,
+      "name_en": "Two of Swords",
+      "name_kr": "소드 2",
+      "symbol": "S♠♠",
+      "group": "swords",
+      "upright": "결정 유보·교착·균형·진실 회피",
+      "reversed": "결정·진실 직면·해결·정보 노출",
+      "image": "cards/waite/51.jpg"
+    },
+    {
+      "id": 52,
+      "name_en": "Three of Swords",
+      "name_kr": "소드 3",
+      "symbol": "S³",
+      "group": "swords",
+      "upright": "상처·슬픔·이별·배신·아픔",
+      "reversed": "회복·용서·상처의 치유·수용",
+      "image": "cards/waite/52.jpg"
+    },
+    {
+      "id": 53,
+      "name_en": "Four of Swords",
+      "name_kr": "소드 4",
+      "symbol": "S⁴",
+      "group": "swords",
+      "upright": "휴식·회복·명상·잠시 멈춤",
+      "reversed": "소진·번아웃·휴식 필요·각성",
+      "image": "cards/waite/53.jpg"
+    },
+    {
+      "id": 54,
+      "name_en": "Five of Swords",
+      "name_kr": "소드 5",
+      "symbol": "S⁵",
+      "group": "swords",
+      "upright": "갈등·승자의 공허·배신·자존심",
+      "reversed": "화해·갈등 종결·용서·교훈",
+      "image": "cards/waite/54.jpg"
+    },
+    {
+      "id": 55,
+      "name_en": "Six of Swords",
+      "name_kr": "소드 6",
+      "symbol": "S⁶",
+      "group": "swords",
+      "upright": "이동·전환·평온으로의 항해·치유",
+      "reversed": "떠나지 못함·과거 집착·정체",
+      "image": "cards/waite/55.jpg"
+    },
+    {
+      "id": 56,
+      "name_en": "Seven of Swords",
+      "name_kr": "소드 7",
+      "symbol": "S⁷",
+      "group": "swords",
+      "upright": "전략·기만·숨김·도피·계획",
+      "reversed": "양심·고백·진실 드러남·후회",
+      "image": "cards/waite/56.jpg"
+    },
+    {
+      "id": 57,
+      "name_en": "Eight of Swords",
+      "name_kr": "소드 8",
+      "symbol": "S⁸",
+      "group": "swords",
+      "upright": "속박감·자기 제한·무력감·두려움",
+      "reversed": "해방·자유·새로운 관점·자각",
+      "image": "cards/waite/57.jpg"
+    },
+    {
+      "id": 58,
+      "name_en": "Nine of Swords",
+      "name_kr": "소드 9",
+      "symbol": "S⁹",
+      "group": "swords",
+      "upright": "불안·악몽·걱정·죄책감·고통",
+      "reversed": "두려움 극복·치유 시작·희망",
+      "image": "cards/waite/58.jpg"
+    },
+    {
+      "id": 59,
+      "name_en": "Ten of Swords",
+      "name_kr": "소드 10",
+      "symbol": "S¹⁰",
+      "group": "swords",
+      "upright": "끝·배신·완전한 패배·바닥",
+      "reversed": "회복·재기·최악에서 벗어남",
+      "image": "cards/waite/59.jpg"
+    },
+    {
+      "id": 60,
+      "name_en": "Page of Swords",
+      "name_kr": "소드 시종",
+      "symbol": "S♜",
+      "group": "swords",
+      "upright": "호기심·탐구·경계·정보·젊은 지성",
+      "reversed": "성급한 판단·소문·가십·미숙",
+      "image": "cards/waite/60.jpg"
+    },
+    {
+      "id": 61,
+      "name_en": "Knight of Swords",
+      "name_kr": "소드 기사",
+      "symbol": "S♞",
+      "group": "swords",
+      "upright": "돌진·신속한 행동·명확한 목표",
+      "reversed": "무모함·공격성·성급·충돌",
+      "image": "cards/waite/61.jpg"
+    },
+    {
+      "id": 62,
+      "name_en": "Queen of Swords",
+      "name_kr": "소드 여왕",
+      "symbol": "S♛",
+      "group": "swords",
+      "upright": "명철함·독립·객관성·진실한 통찰",
+      "reversed": "냉정·비판·고립·가혹함",
+      "image": "cards/waite/62.jpg"
+    },
+    {
+      "id": 63,
+      "name_en": "King of Swords",
+      "name_kr": "소드 왕",
+      "symbol": "S♚",
+      "group": "swords",
+      "upright": "지성·권위·정의·논리적 판단",
+      "reversed": "독단·차가움·권위 남용·궤변",
+      "image": "cards/waite/63.jpg"
+    },
+    {
+      "id": 64,
+      "name_en": "Ace of Pentacles",
+      "name_kr": "펜타클 에이스",
+      "symbol": "P★",
+      "group": "pentacles",
+      "upright": "물질적 시작·기회·풍요의 씨앗·실현",
+      "reversed": "기회 상실·경제적 어려움·실현 지연",
+      "image": "cards/waite/64.jpg"
+    },
+    {
+      "id": 65,
+      "name_en": "Two of Pentacles",
+      "name_kr": "펜타클 2",
+      "symbol": "P★★",
+      "group": "pentacles",
+      "upright": "균형·적응·다중 과제·유동성",
+      "reversed": "불균형·감당 불능·우선순위 혼란",
+      "image": "cards/waite/65.jpg"
+    },
+    {
+      "id": 66,
+      "name_en": "Three of Pentacles",
+      "name_kr": "펜타클 3",
+      "symbol": "P³",
+      "group": "pentacles",
+      "upright": "협력·기술·장인정신·팀워크·인정",
+      "reversed": "협업 실패·품질 저하·인정 부족",
+      "image": "cards/waite/66.jpg"
+    },
+    {
+      "id": 67,
+      "name_en": "Four of Pentacles",
+      "name_kr": "펜타클 4",
+      "symbol": "P⁴",
+      "group": "pentacles",
+      "upright": "보존·안정·절약·소유에 대한 집착",
+      "reversed": "인색함 벗어남·나눔·재정 위기",
+      "image": "cards/waite/67.jpg"
+    },
+    {
+      "id": 68,
+      "name_en": "Five of Pentacles",
+      "name_kr": "펜타클 5",
+      "symbol": "P⁵",
+      "group": "pentacles",
+      "upright": "경제적 어려움·소외·결핍·불안",
+      "reversed": "회복·도움·어려움 극복·재정 안정",
+      "image": "cards/waite/68.jpg"
+    },
+    {
+      "id": 69,
+      "name_en": "Six of Pentacles",
+      "name_kr": "펜타클 6",
+      "symbol": "P⁶",
+      "group": "pentacles",
+      "upright": "관대함·나눔·균형·공정한 교환",
+      "reversed": "불공정·이기심·빚·의존",
+      "image": "cards/waite/69.jpg"
+    },
+    {
+      "id": 70,
+      "name_en": "Seven of Pentacles",
+      "name_kr": "펜타클 7",
+      "symbol": "P⁷",
+      "group": "pentacles",
+      "upright": "인내·평가·장기적 투자·수확 대기",
+      "reversed": "조급함·무익한 노력·실망",
+      "image": "cards/waite/70.jpg"
+    },
+    {
+      "id": 71,
+      "name_en": "Eight of Pentacles",
+      "name_kr": "펜타클 8",
+      "symbol": "P⁸",
+      "group": "pentacles",
+      "upright": "숙련·헌신·기술 연마·근면",
+      "reversed": "완벽주의·단조로움·무성의",
+      "image": "cards/waite/71.jpg"
+    },
+    {
+      "id": 72,
+      "name_en": "Nine of Pentacles",
+      "name_kr": "펜타클 9",
+      "symbol": "P⁹",
+      "group": "pentacles",
+      "upright": "풍요·자립·안정된 성취·우아함",
+      "reversed": "경제적 불안정·자립 실패·겉치레",
+      "image": "cards/waite/72.jpg"
+    },
+    {
+      "id": 73,
+      "name_en": "Ten of Pentacles",
+      "name_kr": "펜타클 10",
+      "symbol": "P¹⁰",
+      "group": "pentacles",
+      "upright": "유산·가족의 부·세대를 잇는 풍요",
+      "reversed": "가족 분쟁·경제적 손실·유산 문제",
+      "image": "cards/waite/73.jpg"
+    },
+    {
+      "id": 74,
+      "name_en": "Page of Pentacles",
+      "name_kr": "펜타클 시종",
+      "symbol": "P♜",
+      "group": "pentacles",
+      "upright": "배움·새 기회·목표 설정·성실",
+      "reversed": "나태·현실 회피·미완·게으름",
+      "image": "cards/waite/74.jpg"
+    },
+    {
+      "id": 75,
+      "name_en": "Knight of Pentacles",
+      "name_kr": "펜타클 기사",
+      "symbol": "P♞",
+      "group": "pentacles",
+      "upright": "근면·책임·꾸준함·신뢰·실용",
+      "reversed": "정체·지루함·완고·무변화",
+      "image": "cards/waite/75.jpg"
+    },
+    {
+      "id": 76,
+      "name_en": "Queen of Pentacles",
+      "name_kr": "펜타클 여왕",
+      "symbol": "P♛",
+      "group": "pentacles",
+      "upright": "실용·안정·모성·풍요·관리 능력",
+      "reversed": "물질주의·과보호·불안·자기돌봄 부족",
+      "image": "cards/waite/76.jpg"
+    },
+    {
+      "id": 77,
+      "name_en": "King of Pentacles",
+      "name_kr": "펜타클 왕",
+      "symbol": "P♚",
+      "group": "pentacles",
+      "upright": "성공·풍요·안정·사업 수완·책임",
+      "reversed": "물질 집착·탐욕·부정·고집",
+      "image": "cards/waite/77.jpg"
+    }
+  ]
+}

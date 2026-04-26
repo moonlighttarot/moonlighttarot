@@ -1,0 +1,318 @@
+{
+  "deck_name": "로맨스 엔젤",
+  "deck_name_en": "Romance Angels",
+  "description": "로맨스 엔젤 · 사랑과 관계의 오라클",
+  "subtitle": "Doreen Virtue · 44장의 사랑 오라클",
+  "interpretation_style": "upright_only",
+  "card_count": 44,
+  "cards": [
+    {
+      "id": 0,
+      "name_en": "A New Love",
+      "name_kr": "새로운 사랑",
+      "symbol": "❤",
+      "upright": "새로운 사랑이 다가오고 있습니다. 마음을 열 준비를 하세요."
+    },
+    {
+      "id": 1,
+      "name_en": "Adventure",
+      "name_kr": "모험",
+      "symbol": "✈",
+      "upright": "관계에 새로운 경험과 모험이 필요합니다."
+    },
+    {
+      "id": 2,
+      "name_en": "Affection",
+      "name_kr": "애정",
+      "symbol": "✿",
+      "upright": "더 많은 애정 표현이 관계를 깊게 합니다."
+    },
+    {
+      "id": 3,
+      "name_en": "Angelic Support",
+      "name_kr": "천사의 지원",
+      "symbol": "✦",
+      "upright": "천사들이 당신의 사랑을 지원하고 있습니다."
+    },
+    {
+      "id": 4,
+      "name_en": "Attractive",
+      "name_kr": "매력적",
+      "symbol": "★",
+      "upright": "당신은 지금 매우 매력적입니다. 자신감을 가지세요."
+    },
+    {
+      "id": 5,
+      "name_en": "Beautiful Changes",
+      "name_kr": "아름다운 변화",
+      "symbol": "❀",
+      "upright": "관계에 아름다운 변화가 일어나고 있습니다."
+    },
+    {
+      "id": 6,
+      "name_en": "Blessing in Disguise",
+      "name_kr": "숨겨진 축복",
+      "symbol": "◈",
+      "upright": "지금의 어려움 속에 축복이 숨어 있습니다."
+    },
+    {
+      "id": 7,
+      "name_en": "Commitment",
+      "name_kr": "헌신",
+      "symbol": "∞",
+      "upright": "더 깊은 헌신과 약속이 필요한 시기입니다."
+    },
+    {
+      "id": 8,
+      "name_en": "Communication",
+      "name_kr": "소통",
+      "symbol": "❋",
+      "upright": "솔직하고 열린 대화가 관계를 치유합니다."
+    },
+    {
+      "id": 9,
+      "name_en": "Compatible",
+      "name_kr": "잘 맞는 사이",
+      "symbol": "☯",
+      "upright": "두 사람은 깊은 수준에서 잘 맞습니다."
+    },
+    {
+      "id": 10,
+      "name_en": "Conscious Dating",
+      "name_kr": "의식적 만남",
+      "symbol": "◉",
+      "upright": "무엇을 원하는지 명확히 알고 만남을 선택하세요."
+    },
+    {
+      "id": 11,
+      "name_en": "Crystal Clear",
+      "name_kr": "수정처럼 명료한",
+      "symbol": "◆",
+      "upright": "상황이 곧 명확해집니다. 진실이 드러납니다."
+    },
+    {
+      "id": 12,
+      "name_en": "Dream Lover",
+      "name_kr": "꿈꾸던 연인",
+      "symbol": "☾",
+      "upright": "당신이 꿈꾸던 이상적 파트너가 다가옵니다."
+    },
+    {
+      "id": 13,
+      "name_en": "Enjoy Your Freedom",
+      "name_kr": "자유를 즐겨요",
+      "symbol": "☁",
+      "upright": "지금은 자유를 만끽하고 자신을 사랑할 시간입니다."
+    },
+    {
+      "id": 14,
+      "name_en": "Family Support",
+      "name_kr": "가족의 지지",
+      "symbol": "⌂",
+      "upright": "가족이 당신의 관계를 지지하고 있습니다."
+    },
+    {
+      "id": 15,
+      "name_en": "Financial Flow",
+      "name_kr": "재정의 흐름",
+      "symbol": "$",
+      "upright": "재정적 풍요가 관계에 긍정적 영향을 줍니다."
+    },
+    {
+      "id": 16,
+      "name_en": "Forgive",
+      "name_kr": "용서하세요",
+      "symbol": "✨",
+      "upright": "용서가 당신과 관계를 치유합니다."
+    },
+    {
+      "id": 17,
+      "name_en": "Friends First",
+      "name_kr": "친구가 먼저",
+      "symbol": "✧",
+      "upright": "우정이 사랑의 견고한 토대가 됩니다."
+    },
+    {
+      "id": 18,
+      "name_en": "Harmony",
+      "name_kr": "조화",
+      "symbol": "☯",
+      "upright": "관계에 조화와 평화가 깃들어 있습니다."
+    },
+    {
+      "id": 19,
+      "name_en": "Healing Your Heart",
+      "name_kr": "마음의 치유",
+      "symbol": "♡",
+      "upright": "과거의 상처를 치유해야 새 사랑이 들어옵니다."
+    },
+    {
+      "id": 20,
+      "name_en": "Home Together",
+      "name_kr": "함께하는 집",
+      "symbol": "⌂",
+      "upright": "함께 꾸리는 보금자리의 시기입니다."
+    },
+    {
+      "id": 21,
+      "name_en": "Honesty",
+      "name_kr": "정직함",
+      "symbol": "☀",
+      "upright": "진실한 소통만이 관계를 지킵니다."
+    },
+    {
+      "id": 22,
+      "name_en": "Life Purpose",
+      "name_kr": "삶의 목적",
+      "symbol": "✢",
+      "upright": "두 사람의 영혼의 목적이 연결되어 있습니다."
+    },
+    {
+      "id": 23,
+      "name_en": "Listening",
+      "name_kr": "경청",
+      "symbol": "❂",
+      "upright": "상대의 말에 진심으로 귀 기울이세요."
+    },
+    {
+      "id": 24,
+      "name_en": "Long-lasting",
+      "name_kr": "오래 지속되는",
+      "symbol": "∞",
+      "upright": "이 관계는 오래 지속될 가능성이 있습니다."
+    },
+    {
+      "id": 25,
+      "name_en": "Marriage",
+      "name_kr": "결혼",
+      "symbol": "♾",
+      "upright": "결혼 또는 깊은 결합의 징조가 있습니다."
+    },
+    {
+      "id": 26,
+      "name_en": "New Beginnings",
+      "name_kr": "새로운 시작",
+      "symbol": "☀",
+      "upright": "관계에 새로운 국면이 시작됩니다."
+    },
+    {
+      "id": 27,
+      "name_en": "Organize",
+      "name_kr": "정돈",
+      "symbol": "❖",
+      "upright": "삶을 정리하면 사랑도 따라옵니다."
+    },
+    {
+      "id": 28,
+      "name_en": "Passion",
+      "name_kr": "열정",
+      "symbol": "☼",
+      "upright": "관계에 열정과 불꽃을 다시 불러일으키세요."
+    },
+    {
+      "id": 29,
+      "name_en": "Patience",
+      "name_kr": "인내",
+      "symbol": "◐",
+      "upright": "좋은 관계는 시간과 인내를 필요로 합니다."
+    },
+    {
+      "id": 30,
+      "name_en": "Reconciliation",
+      "name_kr": "화해",
+      "symbol": "✢",
+      "upright": "과거의 불화가 치유되고 관계가 회복됩니다."
+    },
+    {
+      "id": 31,
+      "name_en": "Romance",
+      "name_kr": "로맨스",
+      "symbol": "♥",
+      "upright": "로맨틱한 시간을 만드세요. 사랑을 표현하세요."
+    },
+    {
+      "id": 32,
+      "name_en": "Sensuality",
+      "name_kr": "관능",
+      "symbol": "❀",
+      "upright": "육체적·감각적 연결이 관계를 깊게 합니다."
+    },
+    {
+      "id": 33,
+      "name_en": "Set Your Intention",
+      "name_kr": "의도를 정하세요",
+      "symbol": "☆",
+      "upright": "원하는 관계를 구체적으로 마음에 그리세요."
+    },
+    {
+      "id": 34,
+      "name_en": "Soulmate",
+      "name_kr": "소울메이트",
+      "symbol": "∞",
+      "upright": "영혼의 반쪽이 가까이 있습니다."
+    },
+    {
+      "id": 35,
+      "name_en": "Surprises",
+      "name_kr": "서프라이즈",
+      "symbol": "✧",
+      "upright": "기쁜 놀라움이 관계에 찾아옵니다."
+    },
+    {
+      "id": 36,
+      "name_en": "Take Action",
+      "name_kr": "행동하세요",
+      "symbol": "➤",
+      "upright": "기다리지 말고 적극적으로 행동하세요."
+    },
+    {
+      "id": 37,
+      "name_en": "Tell the Truth",
+      "name_kr": "진실을 말하세요",
+      "symbol": "☀",
+      "upright": "진실을 말해야 관계가 진전됩니다."
+    },
+    {
+      "id": 38,
+      "name_en": "Think It Over",
+      "name_kr": "잘 생각해보세요",
+      "symbol": "◐",
+      "upright": "섣부른 결정보다 깊은 숙고가 필요합니다."
+    },
+    {
+      "id": 39,
+      "name_en": "Time Apart",
+      "name_kr": "떨어진 시간",
+      "symbol": "☽",
+      "upright": "잠시 거리를 두는 것이 관계에 도움이 됩니다."
+    },
+    {
+      "id": 40,
+      "name_en": "Trust",
+      "name_kr": "신뢰",
+      "symbol": "✦",
+      "upright": "믿음을 가지세요. 의심이 관계를 해칩니다."
+    },
+    {
+      "id": 41,
+      "name_en": "Twin Flame",
+      "name_kr": "쌍둥이 불꽃",
+      "symbol": "❤❤",
+      "upright": "강렬한 쌍둥이 영혼의 만남입니다."
+    },
+    {
+      "id": 42,
+      "name_en": "Unconditional Love",
+      "name_kr": "무조건적 사랑",
+      "symbol": "♡",
+      "upright": "조건 없는 사랑이 가장 큰 힘입니다."
+    },
+    {
+      "id": 43,
+      "name_en": "Worthy of Love",
+      "name_kr": "사랑받을 자격",
+      "symbol": "★",
+      "upright": "당신은 진정한 사랑을 받을 충분한 자격이 있습니다."
+    }
+  ]
+}

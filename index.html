@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a0b2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="달빛 타로">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>달빛 타로 · Moonlight Tarot</title>
+<style>
+  :root {
+    --bg-deep: #0a0518;
+    --bg-dark: #1a0b2e;
+    --bg-mid: #2a1845;
+    --purple: #6b3eb8;
+    --purple-glow: #9b6bd8;
+    --gold: #d4b572;
+    --gold-bright: #f0d08c;
+    --gold-dim: #8a7548;
+    --cream: #f5e9d0;
+    --ink: #1a0b2e;
+    --muted: #8a7ab0;
+    --rose: #d48aa0;
+    --rose-bright: #e8b0c0;
+    --sky: #8aa8d4;
+    --sky-bright: #b0c8e8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; overflow-x: hidden; }
+
+  body {
+    font-family: 'Noto Serif KR', 'Noto Serif', serif;
+    background: var(--bg-deep);
+    color: var(--cream);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(2px 2px at 20% 30%, var(--gold-bright) 0%, transparent 50%),
+      radial-gradient(1px 1px at 60% 70%, var(--cream) 0%, transparent 50%),
+      radial-gradient(1px 1px at 80% 20%, var(--gold) 0%, transparent 50%),
+      radial-gradient(1.5px 1.5px at 30% 80%, var(--purple-glow) 0%, transparent 50%),
+      radial-gradient(1px 1px at 90% 60%, var(--cream) 0%, transparent 50%),
+      radial-gradient(1px 1px at 15% 55%, var(--gold-bright) 0%, transparent 50%),
+      radial-gradient(1.5px 1.5px at 70% 40%, var(--purple-glow) 0%, transparent 50%),
+      radial-gradient(1px 1px at 45% 10%, var(--cream) 0%, transparent 50%);
+    opacity: 0.6;
+    animation: twinkle 4s ease-in-out infinite alternate;
+    z-index: 0; pointer-events: none;
+  }
+
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(ellipse at top, rgba(107, 62, 184, 0.15), transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(212, 181, 114, 0.08), transparent 50%),
+      linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%);
+    z-index: 0; pointer-events: none;
+  }
+
+  @keyframes twinkle { 0% { opacity: 0.3; } 100% { opacity: 0.7; } }
+
+  .container { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; padding: 1.5rem 1rem; }
+
+  .header { text-align: center; margin-bottom: 1.5rem; }
+  .moon-icon {
+    width: 55px; height: 55px;
+    margin: 0 auto 0.8rem; display: block;
+    filter: drop-shadow(0 0 15px rgba(212, 181, 114, 0.5));
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .title { font-size: 1.8rem; font-weight: 300; letter-spacing: 0.3em; color: var(--gold-bright); text-shadow: 0 0 20px rgba(212, 181, 114, 0.4); margin-bottom: 0.3rem; }
+  .subtitle { font-size: 0.7rem; letter-spacing: 0.4em; color: var(--muted); text-transform: uppercase; font-weight: 300; }
+  .divider { width: 100px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); margin: 1.2rem auto; }
+
+  .deck-selector { margin-bottom: 1.5rem; }
+  .section-title { font-size: 0.72rem; letter-spacing: 0.3em; color: var(--gold-dim); text-align: center; margin-bottom: 0.8rem; text-transform: uppercase; }
+  .deck-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  .deck-btn {
+    background: linear-gradient(135deg, rgba(107, 62, 184, 0.1), rgba(107, 62, 184, 0.03));
+    border: 1px solid var(--gold-dim); border-radius: 10px;
+    padding: 0.85rem 0.4rem; color: var(--cream);
+    cursor: pointer; transition: all 0.3s ease;
+    font-family: inherit; text-align: center;
+  }
+  .deck-btn.active {
+    background: linear-gradient(135deg, rgba(212, 181, 114, 0.2), rgba(212, 181, 114, 0.08));
+    border-color: var(--gold-bright); box-shadow: 0 0 15px rgba(212, 181, 114, 0.2);
+  }
+  .deck-btn[data-deck="romance"].active {
+    background: linear-gradient(135deg, rgba(212, 138, 160, 0.2), rgba(212, 138, 160, 0.08));
+    border-color: var(--rose-bright); box-shadow: 0 0 15px rgba(212, 138, 160, 0.25);
+  }
+  .deck-btn[data-deck="symbolon"].active {
+    background: linear-gradient(135deg, rgba(138, 168, 212, 0.2), rgba(138, 168, 212, 0.08));
+    border-color: var(--sky-bright); box-shadow: 0 0 15px rgba(138, 168, 212, 0.25);
+  }
+  .deck-btn-name { font-size: 0.92rem; color: var(--gold-bright); display: block; margin-bottom: 0.15rem; font-weight: 400; }
+  .deck-btn[data-deck="romance"].active .deck-btn-name { color: var(--rose-bright); }
+  .deck-btn[data-deck="symbolon"].active .deck-btn-name { color: var(--sky-bright); }
+  .deck-btn-count { font-size: 0.62rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
+  .deck-desc { font-size: 0.72rem; color: var(--muted); text-align: center; margin-top: 0.6rem; font-style: italic; min-height: 1.2em; padding: 0 0.5rem; line-height: 1.5; }
+
+  .selector { animation: fadeIn 0.8s ease-out; }
+  .selector-title { font-size: 1rem; color: var(--cream); margin-bottom: 1rem; letter-spacing: 0.1em; font-weight: 400; text-align: center; }
+  .count-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin-bottom: 1.5rem; }
+  .count-btn {
+    background: linear-gradient(135deg, rgba(107, 62, 184, 0.15), rgba(107, 62, 184, 0.05));
+    border: 1px solid var(--gold-dim); border-radius: 12px;
+    padding: 1.2rem 0.5rem; color: var(--cream); cursor: pointer;
+    transition: all 0.3s ease; font-family: inherit;
+  }
+  .count-btn:hover, .count-btn.active {
+    background: linear-gradient(135deg, rgba(212, 181, 114, 0.25), rgba(212, 181, 114, 0.1));
+    border-color: var(--gold-bright); transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 181, 114, 0.2);
+  }
+  .count-num { font-size: 1.8rem; font-weight: 300; color: var(--gold-bright); display: block; margin-bottom: 0.2rem; }
+  .count-label { font-size: 0.68rem; letter-spacing: 0.2em; color: var(--muted); }
+
+  .draw-btn {
+    width: 100%; padding: 1.1rem;
+    background: linear-gradient(135deg, var(--purple) 0%, var(--bg-mid) 100%);
+    border: 1px solid var(--gold); border-radius: 50px;
+    color: var(--gold-bright); font-family: inherit;
+    font-size: 0.95rem; letter-spacing: 0.3em; cursor: pointer;
+    transition: all 0.3s ease; position: relative; overflow: hidden;
+    text-transform: uppercase;
+  }
+  .draw-btn::before {
+    content: ''; position: absolute; top: 50%; left: 50%;
+    width: 0; height: 0; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 181, 114, 0.4) 0%, transparent 70%);
+    transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s;
+  }
+  .draw-btn:hover::before { width: 400px; height: 400px; }
+  .draw-btn:hover { box-shadow: 0 0 30px rgba(212, 181, 114, 0.4); border-color: var(--gold-bright); }
+
+  .cards-stage { margin-top: 1.5rem; min-height: 400px; position: relative; perspective: 1500px; }
+  .cards-container { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+  .card { width: 160px; height: 270px; position: relative; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1); cursor: pointer; margin-bottom: 1rem; }
+  .card.flipped { transform: rotateY(180deg); }
+  .card-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 181, 114, 0.15); }
+  .card-back { border: 2px solid var(--gold-dim); display: flex; align-items: center; justify-content: center; }
+
+  .card-back.deck-waite { background: radial-gradient(circle at center, #3a1f5a 0%, #1a0b2e 100%); }
+  .card-back.deck-waite .card-back-pattern { background-image: repeating-linear-gradient(45deg, transparent 0, transparent 8px, rgba(212, 181, 114, 0.08) 8px, rgba(212, 181, 114, 0.08) 9px), repeating-linear-gradient(-45deg, transparent 0, transparent 8px, rgba(212, 181, 114, 0.08) 8px, rgba(212, 181, 114, 0.08) 9px); }
+  .card-back.deck-waite .card-back-symbol { color: var(--gold); }
+  .card-back.deck-waite .card-back-inner { border-color: var(--gold-dim); }
+
+  .card-back.deck-symbolon { background: radial-gradient(circle at center, #2a3a5a 0%, #0f1a2e 100%); border-color: var(--sky-bright); }
+  .card-back.deck-symbolon .card-back-pattern { background-image: radial-gradient(circle at 20% 20%, rgba(138, 168, 212, 0.15) 0, transparent 8%), radial-gradient(circle at 80% 30%, rgba(138, 168, 212, 0.12) 0, transparent 6%), radial-gradient(circle at 30% 70%, rgba(138, 168, 212, 0.12) 0, transparent 7%), radial-gradient(circle at 70% 80%, rgba(138, 168, 212, 0.15) 0, transparent 8%); }
+  .card-back.deck-symbolon .card-back-symbol { color: var(--sky-bright); }
+  .card-back.deck-symbolon .card-back-inner { border-color: var(--sky-bright); opacity: 0.6; }
+
+  .card-back.deck-romance { background: radial-gradient(circle at center, #5a2a3e 0%, #2a0f1e 100%); border-color: var(--rose-bright); }
+  .card-back.deck-romance .card-back-pattern { background-image: repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 15px, rgba(232, 176, 192, 0.1) 15px, rgba(232, 176, 192, 0.1) 16px); }
+  .card-back.deck-romance .card-back-symbol { color: var(--rose-bright); }
+  .card-back.deck-romance .card-back-inner { border-color: var(--rose-bright); opacity: 0.5; }
+
+  .card-back-pattern { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .card-back-inner { width: 70%; aspect-ratio: 1; border: 1px solid; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; }
+  .card-back-inner::before { content: ''; position: absolute; inset: 8px; border: 1px solid currentColor; border-radius: 50%; opacity: 0.5; }
+  .card-back-symbol { font-size: 2.5rem; text-shadow: 0 0 10px currentColor; }
+
+  .card-front { transform: rotateY(180deg); background: linear-gradient(180deg, #f5e9d0 0%, #e8d5a8 100%); color: var(--ink); display: flex; flex-direction: column; border: 2px solid var(--gold); padding: 0.8rem; }
+  .card-front.deck-symbolon { background: linear-gradient(180deg, #e8eef5 0%, #c8d5e8 100%); border-color: var(--sky-bright); }
+  .card-front.deck-symbolon .card-symbol { color: #2a5a8a; }
+  .card-front.deck-romance { background: linear-gradient(180deg, #fce8ee 0%, #f5d0db 100%); border-color: var(--rose-bright); }
+  .card-front.deck-romance .card-symbol { color: #8a3a5a; }
+  .card-front.reversed .card-image { transform: rotate(180deg); }
+  .card-front.reversed { background: linear-gradient(180deg, #d5c3a0 0%, #b8a57d 100%); }
+
+  .card-header { text-align: center; padding-bottom: 0.4rem; border-bottom: 1px solid var(--gold-dim); font-size: 0.58rem; letter-spacing: 0.2em; color: var(--gold-dim); text-transform: uppercase; }
+  .card-front.deck-symbolon .card-header { color: #5a7aa8; border-color: #8aa8d4; }
+  .card-front.deck-romance .card-header { color: #8a5a6a; border-color: #d48aa0; }
+  .card-image { flex: 1; display: flex; align-items: center; justify-content: center; padding: 0.3rem 0; transition: transform 0.4s ease; }
+  .card-image img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+  .card-symbol { font-size: 2.5rem; color: var(--purple); text-shadow: 2px 2px 0 var(--gold-dim), 0 0 20px rgba(107, 62, 184, 0.3); text-align: center; line-height: 1.1; padding: 0 0.3rem; }
+  .card-front.deck-symbolon .card-symbol { font-size: 1.6rem; }
+  /* 카드에 이미지가 있을 때는 헤더/풋터 숨김 (이미지가 카드 자체) */
+  .card-front.has-image { padding: 4px; }
+  .card-front.has-image .card-header,
+  .card-front.has-image .card-footer { display: none; }
+  .card-front.has-image .card-image { padding: 0; height: 100%; }
+  .card-front.has-image .card-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+  .card-footer { text-align: center; padding-top: 0.4rem; border-top: 1px solid var(--gold-dim); font-size: 0.62rem; font-weight: 600; color: var(--ink); letter-spacing: 0.02em; line-height: 1.2; min-height: 2.4em; display: flex; align-items: center; justify-content: center; }
+  .card-front.deck-symbolon .card-footer { border-color: #8aa8d4; }
+  .card-front.deck-romance .card-footer { border-color: #d48aa0; }
+
+  .card-info { margin-top: 0.8rem; text-align: center; opacity: 0; animation: fadeIn 0.8s ease-out 1.2s forwards; max-width: 320px; }
+  .card-info-name { font-size: 0.95rem; color: var(--gold-bright); letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+  .card-info-name.deck-symbolon { color: var(--sky-bright); }
+  .card-info-name.deck-romance { color: var(--rose-bright); }
+  .card-info-orientation { font-size: 0.66rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .card-info-orientation.reversed { color: #c97878; }
+  .card-info-keywords { font-size: 0.78rem; color: var(--cream); line-height: 1.6; margin: 0 auto; font-style: italic; }
+
+  /* 심볼론 전용: Problem/Way/Outcome 표시 */
+  .symbolon-section { margin-top: 0.6rem; padding: 0.6rem 0.7rem; border-radius: 6px; text-align: left; }
+  .symbolon-section-title { font-size: 0.7rem; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 0.3rem; text-transform: uppercase; }
+  .symbolon-section-body { font-size: 0.72rem; line-height: 1.5; color: var(--cream); font-style: normal; }
+  .ss-problem { background: rgba(201, 112, 80, 0.12); border-left: 3px solid #c97050; }
+  .ss-problem .symbolon-section-title { color: #f0a890; }
+  .ss-way { background: rgba(90, 122, 168, 0.15); border-left: 3px solid #5a7aa8; }
+  .ss-way .symbolon-section-title { color: #b0c8e8; }
+  .ss-outcome { background: rgba(90, 138, 74, 0.12); border-left: 3px solid #5a8a4a; }
+  .ss-outcome .symbolon-section-title { color: #a0d098; }
+  .symbolon-theme { background: rgba(212, 181, 114, 0.1); border-left: 3px solid var(--gold); padding: 0.5rem 0.7rem; margin: 0.5rem 0; border-radius: 6px; font-size: 0.74rem; color: var(--cream); font-style: italic; line-height: 1.5; text-align: left; }
+  .symbolon-theme strong { color: var(--gold-bright); font-style: normal; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes cardDeal { 0% { opacity: 0; transform: translateY(-100px) rotateY(0); } 100% { opacity: 1; transform: translateY(0) rotateY(0); } }
+
+  .card-wrapper { animation: cardDeal 0.8s ease-out both; display: flex; flex-direction: column; align-items: center; }
+  .card-wrapper:nth-child(1) { animation-delay: 0.1s; }
+  .card-wrapper:nth-child(2) { animation-delay: 0.3s; }
+  .card-wrapper:nth-child(3) { animation-delay: 0.5s; }
+
+  .reset-btn { margin: 2rem auto 0; display: block; padding: 0.8rem 2rem; background: transparent; border: 1px solid var(--gold-dim); border-radius: 50px; color: var(--muted); font-family: inherit; font-size: 0.85rem; letter-spacing: 0.2em; cursor: pointer; transition: all 0.3s ease; opacity: 0; animation: fadeIn 0.6s ease-out 2s forwards; }
+  .reset-btn:hover { border-color: var(--gold); color: var(--gold-bright); }
+  .position-label { font-size: 0.62rem; letter-spacing: 0.2em; color: var(--gold-dim); margin-bottom: 0.5rem; text-transform: uppercase; text-align: center; }
+
+  @media (max-width: 480px) {
+    .card { width: 130px; height: 220px; }
+    .card-symbol { font-size: 2rem; }
+    .card-front.deck-symbolon .card-symbol { font-size: 1.3rem; }
+    .card-back-symbol { font-size: 2rem; }
+    .title { font-size: 1.4rem; }
+    .cards-container { gap: 0.5rem; }
+    .card-front { padding: 0.5rem; }
+    .card-header { font-size: 0.48rem; }
+    .card-footer { font-size: 0.5rem; }
+    .deck-btn-name { font-size: 0.82rem; }
+    .deck-btn-count { font-size: 0.55rem; }
+  }
+
+  .loading { position: fixed; inset: 0; background: rgba(10, 5, 24, 0.9); display: none; align-items: center; justify-content: center; z-index: 100; flex-direction: column; }
+  .loading.active { display: flex; }
+  .loading-text { color: var(--gold); letter-spacing: 0.3em; font-size: 0.9rem; margin-top: 1rem; animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+  .spinner { width: 50px; height: 50px; border: 2px solid transparent; border-top-color: var(--gold); border-radius: 50%; animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .hidden { display: none !important; }
+
+  /* 데이터 로딩 실패 메시지 */
+  .error-msg { background: rgba(201, 80, 80, 0.15); border: 1px solid #c97050; color: #f0a890; padding: 1rem; border-radius: 8px; text-align: center; font-size: 0.8rem; margin: 1rem 0; }
+
+  /* 푸터 */
+  .footer { margin-top: 2.5rem; padding: 1rem; text-align: center; font-size: 0.65rem; color: var(--muted); line-height: 1.7; border-top: 1px solid rgba(212, 181, 114, 0.15); }
+  .footer .credit { font-size: 0.6rem; opacity: 0.7; margin-top: 0.5rem; }
+</style>
+</head>
+<body>
+
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-text">카드를 섞는 중...</div>
+</div>
+
+<div class="container">
+
+  <header class="header">
+    <svg class="moon-icon" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="20" fill="#1a0b2e" stroke="#d4b572" stroke-width="1.5"/>
+      <path d="M 35 15 A 15 15 0 1 0 35 45 A 12 12 0 1 1 35 15" fill="#d4b572"/>
+      <circle cx="15" cy="18" r="1" fill="#f0d08c"/>
+      <circle cx="48" cy="42" r="0.8" fill="#f0d08c"/>
+      <circle cx="50" cy="15" r="1.2" fill="#f0d08c"/>
+    </svg>
+    <h1 class="title">달빛 타로</h1>
+    <p class="subtitle">Moonlight Tarot</p>
+    <div class="divider"></div>
+  </header>
+
+  <section class="deck-selector">
+    <h2 class="section-title">Choose Your Deck</h2>
+    <div class="deck-options">
+      <button class="deck-btn active" data-deck="waite">
+        <span class="deck-btn-name">웨이트</span>
+        <span class="deck-btn-count" id="count-waite">— CARDS</span>
+      </button>
+      <button class="deck-btn" data-deck="symbolon">
+        <span class="deck-btn-name">심볼론</span>
+        <span class="deck-btn-count" id="count-symbolon">— CARDS</span>
+      </button>
+      <button class="deck-btn" data-deck="romance">
+        <span class="deck-btn-name">로맨스엔젤</span>
+        <span class="deck-btn-count" id="count-romance">— CARDS</span>
+      </button>
+    </div>
+    <div class="deck-desc" id="deckDesc">로딩 중...</div>
+  </section>
+
+  <section class="selector" id="selector">
+    <h2 class="selector-title">몇 장의 카드를 뽑으시겠습니까?</h2>
+    <div class="count-options">
+      <button class="count-btn active" data-count="1">
+        <span class="count-num">1</span>
+        <span class="count-label">ONE</span>
+      </button>
+      <button class="count-btn" data-count="2">
+        <span class="count-num">2</span>
+        <span class="count-label">TWO</span>
+      </button>
+      <button class="count-btn" data-count="3">
+        <span class="count-num">3</span>
+        <span class="count-label">THREE</span>
+      </button>
+    </div>
+    <button class="draw-btn" id="drawBtn">카드 뽑기 · Draw</button>
+  </section>
+
+  <section class="cards-stage">
+    <div id="errorMsg"></div>
+    <div class="cards-container" id="cardsContainer"></div>
+    <button class="reset-btn hidden" id="resetBtn">다시 뽑기 · Reset</button>
+  </section>
+
+  <footer class="footer">
+    <div>달빛 타로 · Moonlight Tarot</div>
+    <div class="credit">
+      웨이트 · 심볼론 · 로맨스 엔젤<br>
+      심볼론 해석: Peter Orban·Ingrid Zinnel·Thea Weller / 한글 번역: 클림 트윈스타·박은영
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ============= 덱 데이터 (외부 JSON 로드) =============
+  const DECK_FILES = {
+    waite: 'data/waite.json',
+    symbolon: 'data/symbolon.json',
+    romance: 'data/romance.json'
+  };
+
+  const DECKS = {};
+  let selectedDeck = 'waite';
+  let selectedCount = 1;
+  let isDrawing = false;
+
+  // 데이터 로드
+  async function loadAllDecks() {
+    try {
+      const promises = Object.entries(DECK_FILES).map(async ([key, file]) => {
+        const res = await fetch(file + '?v=' + Date.now()); // 캐시 방지
+        if (!res.ok) throw new Error(`${file} 로드 실패`);
+        const data = await res.json();
+        DECKS[key] = data;
+        document.getElementById(`count-${key}`).textContent = `${data.card_count} CARDS`;
+      });
+      await Promise.all(promises);
+      updateDeckDesc();
+    } catch (err) {
+      document.getElementById('errorMsg').innerHTML = 
+        `<div class="error-msg">카드 데이터를 불러올 수 없습니다.<br>잠시 후 새로고침해주세요.<br><small>${err.message}</small></div>`;
+    }
+  }
+
+  function updateDeckDesc() {
+    const deck = DECKS[selectedDeck];
+    if (deck) document.getElementById('deckDesc').textContent = deck.description;
+  }
+
+  // ============= 이벤트 =============
+  document.querySelectorAll('.deck-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.deck-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedDeck = btn.dataset.deck;
+      updateDeckDesc();
+    });
+  });
+
+  document.querySelectorAll('.count-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.count-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedCount = parseInt(btn.dataset.count);
+    });
+  });
+
+  document.getElementById('drawBtn').addEventListener('click', drawCards);
+  document.getElementById('resetBtn').addEventListener('click', resetDraw);
+
+  function getRandomCards(count) {
+    const deck = DECKS[selectedDeck];
+    const style = deck.interpretation_style;
+    const shuffled = [...deck.cards].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count).map(card => ({
+      ...card,
+      isReversed: style === 'upright_reversed' ? Math.random() < 0.5 : false
+    }));
+  }
+
+  async function drawCards() {
+    if (isDrawing) return;
+    if (!DECKS[selectedDeck]) {
+      alert('데이터 로딩 중입니다. 잠시 후 다시 시도해주세요.');
+      return;
+    }
+    isDrawing = true;
+
+    const loading = document.getElementById('loading');
+    loading.classList.add('active');
+    await sleep(1500);
+    loading.classList.remove('active');
+
+    document.getElementById('selector').classList.add('hidden');
+
+    const drawnCards = getRandomCards(selectedCount);
+    const deck = DECKS[selectedDeck];
+
+    // 포지션 라벨
+    let labels;
+    if (selectedDeck === 'symbolon') {
+      labels = {1: [''], 2: ['', ''], 3: ['', '', '']};
+    } else if (selectedDeck === 'romance') {
+      labels = {1: [''], 2: ['상황 · Situation', '조언 · Guidance'], 3: ['상황 · Situation', '도전 · Challenge', '조언 · Guidance']};
+    } else {
+      labels = {1: [''], 2: ['과거 · Past', '현재 · Present'], 3: ['과거 · Past', '현재 · Present', '미래 · Future']};
+    }
+
+    const container = document.getElementById('cardsContainer');
+    container.innerHTML = '';
+
+    drawnCards.forEach((card, idx) => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'card-wrapper';
+
+      const positionLabel = labels[selectedCount][idx];
+      const positionHTML = positionLabel ? `<div class="position-label">${positionLabel}</div>` : '';
+
+      let groupLabel = '';
+      let cardSymbol = '';
+      if (selectedDeck === 'waite') {
+        groupLabel = card.group === 'major' ? 'MAJOR ARCANA' : card.group.toUpperCase();
+        cardSymbol = card.symbol;
+      } else if (selectedDeck === 'symbolon') {
+        groupLabel = card.category === 'major' ? 'ARCHETYPE · 원형' : 'SYMBOLON';
+        cardSymbol = card.signs;
+      } else {
+        groupLabel = 'ROMANCE ANGEL';
+        cardSymbol = card.symbol;
+      }
+
+      const orientationText = deck.interpretation_style === 'upright_reversed'
+        ? (card.isReversed ? 'REVERSED · 역방향' : 'UPRIGHT · 정방향') : '';
+
+      // 본문 — 덱별로 다른 표시
+      let bodyHTML = '';
+      if (selectedDeck === 'symbolon') {
+        bodyHTML = `
+          <div class="symbolon-theme"><strong>주제 · Theme</strong><br>${card.theme}</div>
+          <div class="symbolon-section ss-problem">
+            <div class="symbolon-section-title">① Problem · 문제상황</div>
+            <div class="symbolon-section-body">${card.problem}</div>
+          </div>
+          <div class="symbolon-section ss-way">
+            <div class="symbolon-section-title">② Way · 문제해결</div>
+            <div class="symbolon-section-body">${card.way}</div>
+          </div>
+          <div class="symbolon-section ss-outcome">
+            <div class="symbolon-section-title">③ Outcome · 결과</div>
+            <div class="symbolon-section-body">${card.outcome}</div>
+          </div>
+        `;
+      } else {
+        const meaningText = deck.interpretation_style === 'upright_reversed'
+          ? (card.isReversed ? card.reversed : card.upright) : card.upright;
+        bodyHTML = `<div class="card-info-keywords">${meaningText}</div>`;
+      }
+
+      const backSymbol = selectedDeck === 'romance' ? '♡' : selectedDeck === 'symbolon' ? '☉' : '✦';
+
+      // 카드 앞면 내용: 이미지가 있으면 이미지 사용, 없으면 심볼
+      const hasImage = !!card.image;
+      const cardFrontInner = hasImage
+        ? `<div class="card-image"><img src="${card.image}" alt="${card.name_en}" loading="lazy"></div>`
+        : `<div class="card-header">${groupLabel}</div>
+           <div class="card-image"><div class="card-symbol">${cardSymbol}</div></div>
+           <div class="card-footer">${card.name_en}</div>`;
+
+      wrapper.innerHTML = `
+        ${positionHTML}
+        <div class="card" data-idx="${idx}">
+          <div class="card-face card-back deck-${selectedDeck}">
+            <div class="card-back-pattern">
+              <div class="card-back-inner">
+                <div class="card-back-symbol">${backSymbol}</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-face card-front deck-${selectedDeck} ${card.isReversed ? 'reversed' : ''} ${hasImage ? 'has-image' : ''}">
+            ${cardFrontInner}
+          </div>
+        </div>
+        <div class="card-info hidden" data-info-idx="${idx}">
+          <div class="card-info-name deck-${selectedDeck}">${card.name_kr} · ${card.name_en}</div>
+          ${orientationText ? `<div class="card-info-orientation ${card.isReversed ? 'reversed' : ''}">${orientationText}</div>` : ''}
+          ${bodyHTML}
+        </div>
+      `;
+      container.appendChild(wrapper);
+    });
+
+    await sleep(1000);
+
+    const cardElements = container.querySelectorAll('.card');
+    const infoElements = container.querySelectorAll('.card-info');
+
+    for (let i = 0; i < cardElements.length; i++) {
+      await sleep(500);
+      cardElements[i].classList.add('flipped');
+      await sleep(800);
+      infoElements[i].classList.remove('hidden');
+    }
+
+    document.getElementById('resetBtn').classList.remove('hidden');
+    isDrawing = false;
+  }
+
+  function resetDraw() {
+    document.getElementById('cardsContainer').innerHTML = '';
+    document.getElementById('resetBtn').classList.add('hidden');
+    document.getElementById('selector').classList.remove('hidden');
+    isDrawing = false;
+  }
+
+  function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+
+  // 시작
+  loadAllDecks();
+
+  // 서비스 워커 등록 (PWA — 자동 업데이트 지원)
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+</script>
+
+</body>
+</html>
