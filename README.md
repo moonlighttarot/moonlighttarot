@@ -55,6 +55,4 @@
 ## 📜 출처
 
 - **심볼론 카드 해석**: Peter Orban · Ingrid Zinnel · Thea Weller (Switzerland) 공식 가이드북
-- **한글 번역**: 클림 트윈스타 · 박은영 (blog.naver.com/twinstar430)
-
 본 프로젝트는 위 한글 번역본을 기반으로 재구성한 학습·상담 보조 도구입니다.
